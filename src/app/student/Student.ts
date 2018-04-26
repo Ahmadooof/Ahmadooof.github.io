@@ -3,4 +3,7 @@ export class Student{
     }
     name: String ;
     email: String;
+    land : String;
+    city : String;
+    postNumber : number;
 }
