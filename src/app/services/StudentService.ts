@@ -29,4 +29,9 @@ export class StudentService {
         const url = `${this.url}/${id}`;
         return this.http.put<Student>(url,student,httpOptions);
     }
+
+    public deleteStudent(student:Student): Observable<Student>{
+        const url = `${this.url}/${student.id}`;
+        return this.http.delete<Student>(url,httpOptions);
+    }
 }

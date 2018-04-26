@@ -33,7 +33,7 @@ export class EditStudentComponent implements OnInit {
   public UpdateStudent(name:string, email:string,land:string,city:string,postNumber:number): void{
     const id = +this.route.snapshot.paramMap.get('id');
     
-    this.studentService.UpdateStudent({name,email,land,city,postNumber} as Student, id).subscribe();
+    this.studentService.UpdateStudent({id,name,email,land,city,postNumber} as Student, id).subscribe();
   }
 
 }

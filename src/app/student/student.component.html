@@ -20,7 +20,7 @@
         <td>{{ student.name }}</td>
         <td>
             <button type="button" class="btn btn-success" routerLink="/students/{{student.id}}">Edit</button>
-            <button type="button" class="btn btn-danger" (click)="deleteStudent()">Delete</button>
+            <button type="button" class="btn btn-danger" (click)="deleteStudent(student)">Delete</button>
         </td>
       </tr>
     </tbody>

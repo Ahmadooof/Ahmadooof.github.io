@@ -22,7 +22,8 @@ export class StudentComponent implements OnInit {
     this.studentService.getStudents().subscribe(students => this.students = students);
   }
 
-  public deleteStudent(): void {
-    console.log("sd");
+  public deleteStudent(student:Student): void{
+    this.studentService.deleteStudent(student).subscribe();
   }
+
 }
