@@ -12,12 +12,21 @@ export class StudentService {
     constructor(private http:HttpClient) {}
     private url : string = 'http://localhost:8080/hello/api/students';
 
-    public getStudents() : Observable<Array<Student>> {
-        return this.http.get<Array<Student>>(this.url);
+    public getStudents() : Observable<Student[]> {
+        return this.http.get<Student[]>(this.url);
     }
 
     public CreateStudent(student : Student): Observable<Student> {
-        console.log(student.city);
         return this.http.post<Student>(this.url,student,httpOptions);
+    }
+
+    public getStudentById(id : number): Observable<Student> {
+        const url = `${this.url}/${id}`;
+        return this.http.get<Student>(url);
+    }
+
+    public UpdateStudent(student :Student,id:number): Observable<Student>{
+        const url = `${this.url}/${id}`;
+        return this.http.put<Student>(url,student,httpOptions);
     }
 }

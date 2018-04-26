@@ -10,6 +10,7 @@ import { AppRoutingModule } from './Routers/app-routing.module';
 import { TeacherComponent } from './teacher/teacher.component';
 import { HomeComponent } from './home/home.component';
 import { CreateStudentComponent } from './student/create-student/create-student.component';
+import { EditStudentComponent } from './student/edit-student/edit-student.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { CreateStudentComponent } from './student/create-student/create-student.
     TeacherComponent,
     HomeComponent,
     CreateStudentComponent,
+    EditStudentComponent,
   ],
   imports: [
     BrowserModule,
