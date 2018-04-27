@@ -11,6 +11,7 @@ import { TeacherComponent } from './teacher/teacher.component';
 import { HomeComponent } from './home/home.component';
 import { CreateStudentComponent } from './student/create-student/create-student.component';
 import { EditStudentComponent } from './student/edit-student/edit-student.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { EditStudentComponent } from './student/edit-student/edit-student.compon
     HomeComponent,
     CreateStudentComponent,
     EditStudentComponent,
+    NavigationBarComponent,
   ],
   imports: [
     BrowserModule,

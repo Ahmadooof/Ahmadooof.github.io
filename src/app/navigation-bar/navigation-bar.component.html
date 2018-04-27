@@ -1,0 +1,31 @@
+<html>
+  <body>
+      <div class="navButtons">
+        <div class="logo">
+          <h4>The Grand School</h4>
+        </div>
+            <div class="HomeButton">
+                <button type="button" class="btn btn-info" routerLink="">Home</button>
+            </div>
+
+          <div class="teachersButton">
+           <button type="button" class="btn btn-info" routerLink="teachers">Teachers</button>
+          </div>
+        
+        <div class="studensButton">
+            <button type="button" class="btn btn-info" routerLink="/students">students</button>
+        </div>
+        <div>
+            <input type="text" id="myInput" #search (keyup)="searchForStudent(search.value)" placeholder="Search" title="Type in a name">
+        </div>
+        <ul class="search-result">
+                <li *ngFor="let student of studentsResult | async" >
+                  <a routerLink="students/{{student.id}}">
+                    {{student.name}}
+                  </a>
+                </li>
+        </ul>
+    </div>
+      <router-outlet></router-outlet>
+  </body>
+</html>
