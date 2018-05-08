@@ -9,13 +9,14 @@
 }
 .studensButton{
     float: left;
+    margin: 0px 10px 0px 0px; 
 }
 .HomeButton{
     float: left;
     margin: 0px 10px 0px 10px ;
 }
 .navButtons{
-    margin: 20px 0px 0px 0px ;
+    margin: 70px 0px 0px 0px ;
     background-color: aliceblue;
     border-radius: 30px;
 }
