@@ -12,6 +12,8 @@ export class StudentService {
     constructor(private http:HttpClient) {}
     private url : string = 'http://localhost:8080/hello/api/students';
 
+ //   private url : string = 'https://hello-dot-schooldatabast.appspot.com/api/students';
+
     public getStudents() : Observable<Student[]> {
         return this.http.get<Student[]>(this.url);
     }

@@ -1,25 +1,56 @@
+<div class="container">
 
-<button type="button" routerLink="/students/create" class="btn btn-primary">Create a student</button>
-  
-  <table class="table table-bordered">
-    <thead>
-    <tr>
-        <th scope="col">ID</th>
-        <th scope="col">EMAIL</th>
-        <th scope="col">NAME</th>
-        <th scope="col">AdminStuff</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let student of students">
-        <td>{{ student.id }}</td>
-        <td>{{ student.email }}</td>
-        <td>{{ student.name }}</td>
-        <td>
+  <div class="loader">
+  </div>
+
+  <div class="table">
+    <button type="button" routerLink="/students/create" class="btn btn-primary">Create a student</button>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">EMAIL</th>
+          <th scope="col">NAME</th>
+          <th scope="col">AdminStuff</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let student of students">
+          <td>{{ student.id }}</td>
+          <td>{{ student.email }}</td>
+          <td>{{ student.name }}</td>
+          <td>
             <button type="button" class="btn btn-success" routerLink="/students/{{student.id}}">Edit</button>
-            <button type="button" class="btn btn-danger" (click)="deleteStudent(student)">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete</button>
+          </td>
 
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Are you sure to delete this student?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" (click)="deleteStudent(student)">Delete Now</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </tr>
+
+      </tbody>
+    </table>
+
+
+  </div>
