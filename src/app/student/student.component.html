@@ -1,8 +1,7 @@
 <div class="container">
-
-  <div class="loader">
+  <div *ngIf="visible; else theContent" class="loader" >
   </div>
-
+<ng-template #theContent>
   <div class="table">
     <button type="button" routerLink="/students/create" class="btn btn-primary">Create a student</button>
 
@@ -54,3 +53,4 @@
 
 
   </div>
+</ng-template>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { StudentService } from '../services/StudentService';
 import { Student } from './Student';
 import { ActivatedRoute } from '@angular/router';
@@ -11,15 +11,17 @@ import { ActivatedRoute } from '@angular/router';
 export class StudentComponent implements OnInit {
 
   constructor(private studentService: StudentService,private route : ActivatedRoute) { }
-
+   visible=true;
    students : Student[] = [];
 
   ngOnInit() {
+    this.visible = true;
     this.getAllStudents();
   }
 
   public getAllStudents(): void {
     this.studentService.getStudents().subscribe(students => this.students = students);
+    
   }
 
   public deleteStudent(student:Student): void{
