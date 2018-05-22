@@ -20,9 +20,8 @@ export class StudentComponent implements OnInit {
   }
 
   public getAllStudents(): void {
-    this.studentService.getStudents().subscribe(students => this.students = students);
-    
-  }
+    this.studentService.getStudents().subscribe(students => {this.students = students, this.visible=false});    
+    }
 
   public deleteStudent(student:Student): void{
     this.studentService.deleteStudent(student).subscribe();
